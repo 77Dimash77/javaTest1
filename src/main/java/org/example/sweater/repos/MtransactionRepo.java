@@ -7,6 +7,5 @@ import java.util.List;
 
 public interface MtransactionRepo extends CrudRepository<Mtransaction, Long> {
 
-    List<Mtransaction> findByCurrencyshortname(String currencyshortname);
-}
-
+    List<Mtransaction> findByCurrencyshortname(String currency_shortname);
+    }

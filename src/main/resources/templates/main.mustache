@@ -1,12 +1,18 @@
 <html>
 
 <body>
-
+<div>
+    <form action="/logout" method="post">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+        <input type="submit" value="Sign Out"/>
+    </form>
+</div>
 <div>
     <form method="post">
         <input type="text" name="sum" placeholder="Введите сумму" step="0.01" pattern="[0-9]+([.,][0-9]+)?"
                title="Введите число с десятичной точкой"/>
         <input type="text" name="currency_shortname" placeholder="Введите валюту"/>
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
         <button type="submit">Отправить</button>
 
     </form>
@@ -15,6 +21,7 @@
 <div>Список транзакций</div>
 <form method="post" action="filter"></form>
 <input type="text" name="filter">
+<input type="hidden" name="_csrf" value="{{_csrf.token}}" />
 <button type="submit">Найти</button>
 {{#mtransactions}}
     <div>
